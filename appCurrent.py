@@ -9,6 +9,18 @@ from streamlit_folium import st_folium
 model = load_model('trained_model_breed_current.keras')
 st.title("Прогнозирование состояния дерева")
 
+st.markdown(
+    """
+    <style>
+    iframe {
+        max-height: 580px !important;
+        width: 100% !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Классификации
 # Загрузка данных из JSON-файлов
 with open('tree-breeds.json', 'r', encoding='utf-8') as file:
